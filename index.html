@@ -1,1 +1,457 @@
-https://lovable.dev/projects/bced7485-eec8-4a6d-bf17-39f6047ff3f8?view=files&file=rede-alta-volei.html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rede Alta Vôlei Clube — Aulas e times de vôlei</title>
+<meta name="description" content="Aprenda vôlei com quem joga sério. Turmas para crianças, jovens e adultos e times que disputam campeonatos." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ===== Cores e fontes do clube (mude aqui) ===== */
+:root{
+  --amarelo:oklch(0.85 0.17 88);      /* cor de destaque */
+  --azul:oklch(0.26 0.09 265);        /* azul escuro */
+  --quadra:oklch(0.19 0.07 265);      /* fundo escuro */
+  --quadra-suave:oklch(0.75 0.04 265);
+  --linha:oklch(1 0 0 / 14%);
+  --papel:oklch(0.975 0.012 90);
+  --tinta:oklch(0.22 0.07 265);
+  --suave:oklch(0.94 0.018 90);
+  --cinza:oklch(0.45 0.05 265);
+  --borda:oklch(0.88 0.025 90);
+  --branco:oklch(0.995 0.006 90);
+  --raio:12px;
+  --f-display:"Anton","Impact",sans-serif;
+  --f-texto:"Barlow",system-ui,sans-serif;
+  --sombra:0 20px 50px -30px oklch(0.26 0.09 265 / 55%);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papel);color:var(--tinta);font:400 17px/1.6 var(--f-texto)}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:.95;letter-spacing:.01em;margin:0;text-transform:uppercase}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.eyebrow{font-weight:700;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase}
+.cor-destaque{color:var(--amarelo)}
+.cor-marca{color:oklch(0.58 0.19 258)}
+
+/* ===== Botões ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;
+  padding:16px 28px;font:700 16px var(--f-texto);cursor:pointer;transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-amarelo{background:var(--amarelo);color:var(--tinta)}
+.btn-contorno{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px oklch(1 0 0 / 40%)}
+.btn-azul{background:var(--azul);color:var(--papel)}
+
+/* ===== Cabeçalho ===== */
+.topo{position:sticky;top:0;z-index:50;background:oklch(0.975 0.012 90 / 92%);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--borda)}
+.topo .container{display:flex;align-items:center;justify-content:space-between;height:70px}
+.marca{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-size:20px;text-transform:uppercase}
+.bola{width:26px;height:26px;border-radius:50%;background:conic-gradient(from 20deg,var(--amarelo),oklch(0.75 0.15 80),var(--amarelo));
+  box-shadow:inset -4px -4px 0 oklch(0.26 0.09 265 / 25%)}
+.menu{display:flex;gap:26px;font-weight:600;font-size:15px}
+.menu a{padding:6px 0;border-bottom:2px solid transparent}
+.menu a.ativo{border-color:var(--amarelo)}
+.hamb{display:none;background:none;border:0;font-size:26px;cursor:pointer;line-height:1}
+
+/* ===== Páginas (mostra/oculta) ===== */
+.pagina{display:none}
+.pagina.ativa{display:block}
+
+/* ===== Hero ===== */
+.hero{position:relative;min-height:80vh;background:var(--quadra);color:#fff;display:flex;align-items:flex-end;overflow:hidden}
+.hero .foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% center}
+.hero .veu{position:absolute;inset:0;background:linear-gradient(180deg,oklch(0.19 0.07 265 / 25%) 0%,oklch(0.19 0.07 265 / 85%) 70%,var(--quadra) 100%)}
+.hero .container{position:relative;padding-top:110px;padding-bottom:70px}
+.hero h1{font-size:clamp(3.6rem,14vw,9rem)}
+.hero .sub{margin-top:22px;max-width:460px;font-size:19px;color:var(--quadra-suave)}
+.acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* ===== Faixa de números ===== */
+.numeros{background:var(--amarelo);color:var(--tinta)}
+.numeros .container{display:grid;grid-template-columns:repeat(4,1fr)}
+.numeros div{padding:30px 16px;border-right:1px solid oklch(0.22 0.07 265 / 15%)}
+.numeros div:last-child{border:0}
+.numeros b{display:block;font-family:var(--f-display);font-size:44px;font-weight:400}
+.numeros span{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+
+/* ===== Seções ===== */
+.secao{padding:80px 0}
+.secao.clara{background:var(--suave)}
+.secao h2{font-size:clamp(2.2rem,5vw,3.6rem);margin-top:12px;max-width:640px}
+.cards{display:grid;gap:22px;margin-top:44px}
+.cards.tres{grid-template-columns:repeat(3,1fr)}
+.cards.dois{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--branco);border:1px solid var(--borda);border-radius:var(--raio);padding:26px;box-shadow:var(--sombra)}
+.card h3{font-size:24px;margin-top:18px}
+.card p{color:var(--cinza)}
+.selo{width:46px;height:46px;border-radius:50%;background:var(--azul);color:var(--amarelo);display:grid;place-items:center;font-size:22px}
+.duas-colunas{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.foto-quadrada{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--raio);box-shadow:var(--sombra)}
+.lista-turmas{list-style:none;padding:0;margin:28px 0 0;border-top:1px solid var(--borda);border-bottom:1px solid var(--borda)}
+.lista-turmas li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid var(--borda)}
+.lista-turmas li:last-child{border:0}
+.lista-turmas b{font-family:var(--f-display);font-weight:400;font-size:20px;text-transform:uppercase}
+.lista-turmas small{color:var(--cinza)}
+
+/* ===== Faixa escura com linhas de quadra ===== */
+.faixa{position:relative;background:var(--quadra);color:#fff;overflow:hidden;
+  background-image:linear-gradient(var(--linha) 1px,transparent 1px),linear-gradient(90deg,var(--linha) 1px,transparent 1px);
+  background-size:64px 64px}
+.faixa .container{padding:80px 20px;display:flex;flex-wrap:wrap;gap:26px;align-items:flex-end;justify-content:space-between}
+.faixa h2{font-size:clamp(2.2rem,5vw,3.8rem);max-width:560px}
+.faixa p{max-width:420px;color:var(--quadra-suave);margin-top:16px}
+
+/* ===== Times ===== */
+.grade-times{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--borda);border:1px solid var(--borda);border-radius:var(--raio);overflow:hidden;margin-top:44px}
+.grade-times article{background:var(--branco);padding:32px}
+.grade-times h3{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-top:8px}
+.grade-times .tec{color:var(--cinza);margin-top:10px}
+.grade-times .titulo{margin-top:20px;font-weight:700}
+
+/* ===== Formulário ===== */
+.form-area{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+form{background:var(--branco);border:1px solid var(--borda);border-radius:var(--raio);padding:28px;box-shadow:var(--sombra)}
+form h2{font-size:28px;margin-bottom:20px}
+.campo{margin-bottom:18px}
+.campo label{display:block;font-weight:600;font-size:14px;margin-bottom:6px}
+.campo input,.campo select,.campo textarea{width:100%;padding:13px 12px;border:1px solid var(--borda);border-radius:8px;
+  font:400 16px var(--f-texto);background:transparent;color:inherit}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:2px solid oklch(0.58 0.19 258);outline-offset:1px}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.aviso{margin-top:16px;text-align:center;font-weight:700;color:oklch(0.58 0.19 258)}
+.info h3{font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:oklch(0.58 0.19 258);font-family:var(--f-texto);font-weight:700}
+.info p{margin-top:8px;font-size:18px}
+.info > div + div{margin-top:26px}
+
+/* ===== Rodapé ===== */
+.rodape{background:var(--quadra);color:var(--quadra-suave);padding:56px 0 32px}
+.rodape .container{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between}
+.rodape .marca{color:#fff}
+.rodape a:hover{color:#fff}
+.rodape small{display:block;margin-top:32px;padding-top:20px;border-top:1px solid var(--linha);font-size:13px}
+
+/* ===== Animação de entrada ===== */
+@keyframes sobe{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.ativa .anim{animation:sobe .8s cubic-bezier(.2,.7,.2,1) both}
+
+/* ===== Celular ===== */
+@media (max-width:820px){
+  .hamb{display:block}
+  .menu{position:absolute;top:70px;left:0;right:0;flex-direction:column;gap:0;background:var(--branco);
+    border-bottom:1px solid var(--borda);padding:8px 20px;display:none}
+  .menu.aberto{display:flex}
+  .menu a{padding:14px 0;border-bottom:1px solid var(--borda)}
+  .numeros .container{grid-template-columns:1fr 1fr}
+  .numeros div:nth-child(2){border-right:0}
+  .cards.tres,.cards.dois,.duas-colunas,.form-area,.grade-times,.duas{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= CABEÇALHO ================= -->
+<header class="topo">
+  <div class="container">
+    <a class="marca" href="#inicio"><span class="bola"></span> Rede Alta</a>
+    <button class="hamb" id="abrir" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="menu" id="menu">
+      <a href="#inicio" data-link>Início</a>
+      <a href="#aulas" data-link>Aulas</a>
+      <a href="#times" data-link>Times</a>
+      <a href="#contato" data-link>Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= INÍCIO ================= -->
+<section class="pagina ativa" id="inicio">
+
+  <div class="hero">
+    <!-- TROQUE A FOTO: coloque o endereço da sua imagem abaixo -->
+    <img class="foto" src="hero-volei.jpg" alt="Atleta saltando para atacar a bola sobre a rede" />
+    <div class="veu"></div>
+    <div class="container">
+      <p class="eyebrow cor-destaque anim">Rede Alta Vôlei Clube</p>
+      <h1 class="anim">Suba<br /><span class="cor-destaque">mais alto.</span></h1>
+      <p class="sub anim">Aulas de vôlei para crianças, jovens e adultos — e times que entram em quadra para vencer.</p>
+      <div class="acoes anim">
+        <a class="btn btn-amarelo" href="#contato" data-link>Agendar aula grátis →</a>
+        <a class="btn btn-contorno" href="#times" data-link>Conhecer os times</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="numeros">
+    <div class="container">
+      <div><b>12</b><span>anos de quadra</span></div>
+      <div><b>250+</b><span>alunos ativos</span></div>
+      <div><b>4</b><span>times competindo</span></div>
+      <div><b>18</b><span>títulos regionais</span></div>
+    </div>
+  </div>
+
+  <div class="secao">
+    <div class="container">
+      <p class="eyebrow cor-marca">Por que a Rede Alta</p>
+      <h2>Aqui todo mundo joga. E todo mundo evolui.</h2>
+      <div class="cards tres">
+        <div class="card"><div class="selo">⚡</div><h3>Técnica de verdade</h3><p>Professores formados e treinos planejados por nível.</p></div>
+        <div class="card"><div class="selo">👥</div><h3>Turmas acolhedoras</h3><p>Do primeiro toque na bola ao time principal.</p></div>
+        <div class="card"><div class="selo">🏆</div><h3>Espírito competitivo</h3><p>Quem quiser, compete em ligas e campeonatos.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="secao clara">
+    <div class="container duas-colunas">
+      <img class="foto-quadrada" src="treino-volei.jpg" alt="Alunas treinando manchete com a professora" loading="lazy" />
+      <div>
+        <p class="eyebrow cor-marca">Aulas</p>
+        <h2>Uma turma para cada momento do seu jogo</h2>
+        <ul class="lista-turmas">
+          <li><b>Iniciação</b><small>7 a 11 anos</small></li>
+          <li><b>Juvenil</b><small>12 a 17 anos</small></li>
+          <li><b>Adulto iniciante</b><small>18+</small></li>
+          <li><b>Adulto avançado</b><small>18+</small></li>
+        </ul>
+        <p style="margin-top:28px"><a class="btn btn-azul" href="#aulas" data-link>Ver horários →</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faixa">
+    <!-- TROQUE A FOTO: coloque o endereço da sua imagem abaixo -->
+    <img class="foto" src="time-volei.jpg" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35" />
+    <div class="container" style="position:relative">
+      <div>
+        <p class="eyebrow cor-destaque">Nossos times</p>
+        <h2>Do treino para a quadra de jogo</h2>
+        <p>Quatro equipes disputando ligas e campeonatos — da base ao adulto.</p>
+      </div>
+      <a class="btn btn-amarelo" href="#times" data-link>Ver os times →</a>
+    </div>
+  </div>
+
+  <div class="secao" style="text-align:center">
+    <div class="container">
+      <h2 style="margin:0 auto;max-width:700px">A primeira aula é por nossa conta</h2>
+      <p style="margin:16px auto 0;max-width:440px;color:var(--cinza)">Venha conhecer o ginásio, os professores e a turma. É só trazer tênis e vontade.</p>
+      <p style="margin-top:30px"><a class="btn btn-amarelo" href="#contato" data-link>Quero minha aula grátis</a></p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= AULAS ================= -->
+<section class="pagina" id="aulas">
+
+  <div class="hero" style="min-height:46vh">
+    <img class="foto" src="treino-volei.jpg" alt="Alunas treinando manchete com a professora" />
+    <div class="veu"></div>
+    <div class="container" style="padding-bottom:46px">
+      <p class="eyebrow cor-destaque anim">Aulas</p>
+      <h1 class="anim" style="font-size:clamp(2.8rem,9vw,5.5rem)">Treine no seu <span class="cor-destaque">ritmo</span></h1>
+      <p class="sub anim">Quatro turmas pensadas para cada idade e nível. Você começa onde está e vai até onde quiser.</p>
+    </div>
+  </div>
+
+  <div class="secao">
+    <div class="container">
+      <div class="cards dois">
+        <article class="card">
+          <p class="eyebrow cor-marca">Primeiro contato</p><h3>Iniciação</h3>
+          <p style="font-weight:700;color:var(--tinta)">7 a 11 anos</p>
+          <p>Coordenação, brincadeiras com bola e os fundamentos básicos: toque, manchete e saque por baixo.</p>
+          <p style="margin-top:18px"><span class="btn btn-azul" style="padding:8px 16px;font-size:14px">Seg e Qua · 14h</span> <span class="btn btn-azul" style="padding:8px 16px;font-size:14px">Sáb · 9h</span></p>
+        </article>
+        <article class="card">
+          <p class="eyebrow cor-marca">Base competitiva</p><h3>Juvenil</h3>
+          <p style="font-weight:700;color:var(--tinta)">12 a 17 anos</p>
+          <p>Técnica, posicionamento e tática de jogo. Caminho natural para as equipes Sub-15 e Sub-17.</p>
+          <p style="margin-top:18px"><span class="btn btn-azul" style="padding:8px 16px;font-size:14px">Ter e Qui · 16h</span> <span class="btn btn-azul" style="padding:8px 16px;font-size:14px">Sáb · 10h30</span></p>
+        </article>
+        <article class="card">
+          <p class="eyebrow cor-marca">Nunca jogou? Comece aqui</p><h3>Adulto iniciante</h3>
+          <p style="font-weight:700;color:var(--tinta)">18+</p>
+          <p>Aprenda do zero em um grupo acolhedor. Fundamentos, rodízio e muitos rachões no fim da aula.</p>
+          <p style="margin-top:18px"><span class="btn btn-azul" style="padding:8px 16px;font-size:14px">Seg e Qua · 19h30</span> <span class="btn btn-azul" style="padding:8px 16px;font-size:14px">Sáb · 8h</span></p>
+        </article>
+        <article class="card">
+          <p class="eyebrow cor-marca">Treino de alto ritmo</p><h3>Adulto avançado</h3>
+          <p style="font-weight:700;color:var(--tinta)">18+</p>
+          <p>Para quem já joga: ataque, bloqueio, sistemas de jogo e preparação para torneios amadores.</p>
+          <p style="margin-top:18px"><span class="btn btn-azul" style="padding:8px 16px;font-size:14px">Ter e Qui · 20h30</span></p>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="secao clara">
+    <div class="container duas-colunas">
+      <div><p class="eyebrow cor-marca">Em todas as turmas</p><h2>O que está incluso</h2></div>
+      <ul style="list-style:none;padding:0;margin:0">
+        <li style="margin-bottom:16px">✔&nbsp; Professores com formação em Educação Física</li>
+        <li style="margin-bottom:16px">✔&nbsp; Bolas e equipamentos de treino</li>
+        <li style="margin-bottom:16px">✔&nbsp; Avaliação de nível na primeira aula</li>
+        <li>✔&nbsp; Convite para os times a partir do Juvenil</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="secao" style="text-align:center">
+    <div class="container">
+      <h2 style="margin:0 auto;max-width:600px">Ficou em dúvida sobre a turma?</h2>
+      <p style="margin:16px auto 0;max-width:420px;color:var(--cinza)">Na aula experimental a gente avalia seu nível e indica o melhor horário.</p>
+      <p style="margin-top:30px"><a class="btn btn-amarelo" href="#contato" data-link>Agendar aula grátis</a></p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= TIMES ================= -->
+<section class="pagina" id="times">
+
+  <div class="hero" style="min-height:46vh">
+    <img class="foto" src="time-volei.jpg" alt="Equipe comemorando um ponto" />
+    <div class="veu"></div>
+    <div class="container" style="padding-bottom:46px">
+      <p class="eyebrow cor-destaque anim">Times</p>
+      <h1 class="anim" style="font-size:clamp(2.8rem,9vw,5.5rem)">Garra em <span class="cor-destaque">cada ponto</span></h1>
+      <p class="sub anim">Nossas equipes nascem nas aulas. Treino sério, união e muita torcida na arquibancada.</p>
+    </div>
+  </div>
+
+  <div class="secao">
+    <div class="container">
+      <div class="grade-times">
+        <article><p class="eyebrow cor-marca">Base</p><h3>Sub-15 Misto</h3><p class="tec">Técnico(a): Profª Carla Mendes</p><p class="titulo">🏅 Vice-campeão da Copa Regional 2026</p></article>
+        <article><p class="eyebrow cor-marca">Base</p><h3>Sub-17 Feminino</h3><p class="tec">Técnico(a): Prof. Rafael Souza</p><p class="titulo">🏅 Campeão do Estadual Juvenil 2026</p></article>
+        <article><p class="eyebrow cor-marca">Principal</p><h3>Adulto Feminino</h3><p class="tec">Técnico(a): Profª Juliana Rocha</p><p class="titulo">🏅 3º lugar na Liga Amadora 2026</p></article>
+        <article><p class="eyebrow cor-marca">Principal</p><h3>Adulto Masculino</h3><p class="tec">Técnico(a): Prof. Marcos Lima</p><p class="titulo">🏅 Semifinalista da Liga Amadora 2026</p></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="faixa">
+    <div class="container">
+      <div>
+        <p class="eyebrow cor-destaque">Peneiras abertas</p>
+        <h2>Quer vestir a camisa da Rede Alta?</h2>
+        <p>Alunos das turmas Juvenil e Adulto avançado podem ser convidados para os times.</p>
+      </div>
+      <a class="btn btn-amarelo" href="#contato" data-link>Quero participar</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= CONTATO ================= -->
+<section class="pagina" id="contato">
+
+  <div class="hero" style="min-height:46vh">
+    <img class="foto" src="hero-volei.jpg" alt="Atleta saltando para atacar a bola sobre a rede" />
+    <div class="veu"></div>
+    <div class="container" style="padding-bottom:46px">
+      <p class="eyebrow cor-destaque anim">Contato</p>
+      <h1 class="anim" style="font-size:clamp(2.8rem,9vw,5.5rem)">Sua primeira aula é <span class="cor-destaque">grátis</span></h1>
+      <p class="sub anim">Preencha o formulário e a gente chama você para combinar o melhor dia.</p>
+    </div>
+  </div>
+
+  <div class="secao">
+    <div class="container form-area">
+      <form id="form">
+        <h2>Agendar aula experimental</h2>
+        <div class="campo"><label for="nome">Nome</label><input id="nome" name="nome" required autocomplete="name" /></div>
+        <div class="duas">
+          <div class="campo"><label for="telefone">WhatsApp</label><input id="telefone" name="telefone" type="tel" required autocomplete="tel" placeholder="(11) 90000-0000" /></div>
+          <div class="campo"><label for="turma">Turma</label>
+            <select id="turma" name="turma" required>
+              <option value="" disabled selected>Escolha uma turma</option>
+              <option>Iniciação (7 a 11 anos)</option>
+              <option>Juvenil (12 a 17 anos)</option>
+              <option>Adulto iniciante (18+)</option>
+              <option>Adulto avançado (18+)</option>
+            </select>
+          </div>
+        </div>
+        <div class="campo"><label for="mensagem">Mensagem (opcional)</label><textarea id="mensagem" name="mensagem" rows="4" placeholder="Já jogou antes? Tem preferência de horário?"></textarea></div>
+        <button class="btn btn-amarelo" type="submit" style="width:100%">Quero minha aula grátis</button>
+        <p class="aviso" id="aviso" role="status" hidden>Pedido recebido! Em breve entraremos em contato.</p>
+      </form>
+
+      <aside class="info">
+        <div><h3>Onde estamos</h3><p>Ginásio Rede Alta — Rua das Quadras, 120, Centro</p></div>
+        <div><h3>Atendimento</h3><p>Seg a sex, 9h às 21h · Sáb, 8h às 12h</p></div>
+        <div><h3>Fale direto</h3><p>(11) 98765-4321</p><p>contato@redealtavolei.com.br</p><p>@redealtavolei</p></div>
+      </aside>
+    </div>
+  </div>
+
+</section>
+
+</main>
+
+<!-- ================= RODAPÉ ================= -->
+<footer class="rodape">
+  <div class="container">
+    <div>
+      <p class="marca"><span class="bola"></span> Rede Alta Vôlei Clube</p>
+      <p style="margin-top:10px">Suba mais alto.</p>
+    </div>
+    <div>
+      <p><a href="#aulas" data-link>Aulas</a></p>
+      <p><a href="#times" data-link>Times</a></p>
+      <p><a href="#contato" data-link>Contato</a></p>
+    </div>
+    <div>
+      <p>Rua das Quadras, 120, Centro</p>
+      <p>(11) 98765-4321</p>
+      <p>@redealtavolei</p>
+    </div>
+    <small>© 2026 Rede Alta Vôlei Clube. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<script>
+// ----- troca de página pelo endereço (#inicio, #aulas, #times, #contato) -----
+var PAGINAS = ["inicio","aulas","times","contato"];
+function mostrar(){
+  var alvo = location.hash.replace("#","") || "inicio";
+  if(PAGINAS.indexOf(alvo) < 0) alvo = "inicio";
+  PAGINAS.forEach(function(p){
+    document.getElementById(p).classList.toggle("ativa", p === alvo);
+  });
+  document.querySelectorAll("[data-link]").forEach(function(a){
+    a.classList.toggle("ativo", a.getAttribute("href") === "#" + alvo);
+  });
+  document.getElementById("menu").classList.remove("aberto");
+  window.scrollTo({top:0,behavior:"instant"});
+}
+window.addEventListener("hashchange", mostrar);
+mostrar();
+
+// ----- menu do celular -----
+document.getElementById("abrir").addEventListener("click", function(){
+  var m = document.getElementById("menu");
+  m.classList.toggle("aberto");
+  this.setAttribute("aria-expanded", m.classList.contains("aberto"));
+});
+
+// ----- formulário: mostra a confirmação -----
+document.getElementById("form").addEventListener("submit", function(e){
+  e.preventDefault();
+  document.getElementById("aviso").hidden = false;
+  this.reset();
+});
+</script>
+</body>
+</html>
